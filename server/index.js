@@ -7,7 +7,7 @@ const id = process.env.SCOREBOARD_ID;
 const port = process.env.PORT || 3000;
 
 const app = express();
-app.use(cors({ origin: `${process.env.FRONTEND_URL}/*` }));
+app.use(cors({ origin: `https://scoreboard-justanotherwebdev.vercel.app` }));
 app.use(express.json());
 
 
