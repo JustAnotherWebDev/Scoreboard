@@ -25,7 +25,7 @@ const Scoreboard = () => {
     setLoading(true)
     setStatus("...")
     axios
-      .put(`${process.env.BACKEND_URL}/scoreboard`, {
+      .put(`${import.meta.env.VITE_BACKEND_URL}/scoreboard`, {
         player1: p1.name,
         social1: p1.social,
         score1: p1.score,
@@ -45,7 +45,7 @@ const Scoreboard = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.BACKEND_URL}/scoreboard`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/scoreboard`)
       .then(res => {
         const data = res.data
         setP1({ name: data.player1, social: data.social1, score: data.score1 })
