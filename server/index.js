@@ -7,7 +7,7 @@ const id = process.env.SCOREBOARD_ID;
 const port = process.env.PORT || 3000;
 
 const app = express();
-app.use(cors({ origin: `${process.env.FRONTEND_URL}scoreboard` }));
+app.use(cors({ origin: process.env.FRONTEND_URL }));
 app.use(express.json());
 
 
