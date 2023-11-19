@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Scoreboard from "./components/Scoreboard"
+import Home from "./components/Home"
 import "./index.css"
 
 const App = () => {
