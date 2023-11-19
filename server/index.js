@@ -61,7 +61,7 @@ app.get('/scoreboard', async (req, res) => {
 app.get('/scoreboard/player1', async (req, res) => {
   try {
     const data = await Scoreboard.findById(id);
-    res.status(200).json(data.player1);
+    res.status(200).send(data.player1);
   } catch (error) {
     console.log(`[GET player1] ${error}`);
     res.status(500).json({ message: error.message });
@@ -72,7 +72,7 @@ app.get('/scoreboard/player1', async (req, res) => {
 app.get('/scoreboard/social1', async (req, res) => {
   try {
     const data = await Scoreboard.findById(id);
-    res.status(200).json(data.social1);
+    res.status(200).send(data.social1);
   } catch (error) {
     console.log(`[GET social1] ${error}`);
     res.status(500).json({ message: error.message });
@@ -94,7 +94,7 @@ app.get('/scoreboard/score1', async (req, res) => {
 app.get('/scoreboard/player2', async (req, res) => {
   try {
     const data = await Scoreboard.findById(id);
-    res.status(200).json(data.player2);
+    res.status(200).send(data.player2);
   } catch (error) {
     console.log(`[GET player2] ${error}`);
     res.status(500).json({ message: error.message });
@@ -105,7 +105,7 @@ app.get('/scoreboard/player2', async (req, res) => {
 app.get('/scoreboard/social2', async (req, res) => {
   try {
     const data = await Scoreboard.findById(id);
-    res.status(200).json(data.social2);
+    res.status(200).send(data.social2);
   } catch (error) {
     console.log(`[GET social2] ${error}`);
     res.status(500).json({ message: error.message });
@@ -127,7 +127,7 @@ app.get('/scoreboard/score2', async (req, res) => {
 app.get('/scoreboard/round', async (req, res) => {
   try {
     const data = await Scoreboard.findById(id);
-    res.status(200).json(data.round);
+    res.status(200).send(data.round);
   } catch (error) {
     console.log(`[GET round] ${error}`);
     res.status(500).json({ message: error.message });
