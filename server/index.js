@@ -28,6 +28,10 @@ mongoose.connect(process.env.MONGODB_URI)
     res.status(500).json({ message: error.message });
   });
 
+// READ TEST 
+app.get('/', async (req, res) => {
+  res.send("Hello world");
+});
 
 // UPDATE SCOREBOARD
 app.put('/scoreboard', async (req, res) => {
