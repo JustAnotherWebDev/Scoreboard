@@ -1,0 +1,62 @@
+[
+  {
+    "id": "WQ",
+    "short": "W Quarter",
+    "full": "Winners Quarter"
+  },
+  {
+    "id": "WS",
+    "short": "W Semi",
+    "full": "Winners Semifinal"
+  },
+  {
+    "id": "LE",
+    "short": "L Eight",
+    "full": "Losers Eight"
+  },
+  {
+    "id": "LQ",
+    "short": "L Quarter",
+    "full": "Losers Quarter"
+  },
+  {
+    "id": "WF",
+    "short": "W Final",
+    "full": "Winners Final"
+  },
+  {
+    "id": "LS",
+    "short": "L Semi",
+    "full": "Losers Semifinal"
+  },
+  {
+    "id": "LF",
+    "short": "L Final",
+    "full": "Losers Final"
+  },
+  {
+    "id": "GF",
+    "short": "Grand Final",
+    "full": "Grand Final"
+  },
+  {
+    "id": "TF",
+    "short": "True Final",
+    "full": "True Final"
+  },
+  {
+    "id": "BM",
+    "short": "Bonus Match",
+    "full": "Bonus Match"
+  },
+  {
+    "id": "GM",
+    "short": "Grudge Match",
+    "full": "Grudge Match"
+  },
+  {
+    "id": "MM",
+    "short": "Money Match",
+    "full": "Money Match"
+  }
+]
