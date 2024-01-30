@@ -1,5 +1,20 @@
 [
   {
+    "id": "FT2",
+    "short": "FT2",
+    "full": "First to 2"
+  },
+  {
+    "id": "FT3",
+    "short": "FT3",
+    "full": "First to 3"
+  },
+  {
+    "id": "FT5",
+    "short": "FT5",
+    "full": "First to 5"
+  },
+  {
     "id": "WQ",
     "short": "W Quarter",
     "full": "Winners Quarter"
