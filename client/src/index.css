@@ -58,6 +58,7 @@ label {
   width: 100px;
 }
 
+input,
 select {
   background-color: var(--button);
   border-radius: 3px;
