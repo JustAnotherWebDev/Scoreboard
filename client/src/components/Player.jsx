@@ -1,27 +1,20 @@
-import players from "../data/players.json"
-import plusIcon from "../assets/plus.svg"
-import minusIcon from "../assets/minus.svg"
+import plusIcon from "../assets/plus.svg";
+import minusIcon from "../assets/minus.svg";
 
 const Player = props => {
-  const { player, setPlayer } = props
+  const { player, setPlayer } = props;
   return (
     <>
-      <select
-        value={player.social}
+      <input
+        value={player.name}
         onChange={e =>
           setPlayer({
             ...player,
             social: e.target.value,
-            name: e.target.options[e.target.selectedIndex].textContent,
+            name: e.target.value,
           })
         }
-      >
-        {players.map(player => (
-          <option key={player.social} value={player.social}>
-            {player.name}
-          </option>
-        ))}
-      </select>
+      />
       <div className="control-panel">
         <button
           onClick={() => setPlayer({ ...player, score: player.score - 1 })}
@@ -36,7 +29,7 @@ const Player = props => {
         </button>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Player
+export default Player;
