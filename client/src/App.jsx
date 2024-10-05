@@ -4,11 +4,13 @@ import Player from "./components/Player";
 import axios from "axios";
 import "./index.css";
 
+const initialPlayer = { name: "", social: "", score: 0 };
+
 const App = () => {
   const [isLoading, setLoading] = useState(false);
   const [status, setStatus] = useState("SAVE");
-  const [p1, setP1] = useState({ name: "", social: "", score: 0 });
-  const [p2, setP2] = useState({ name: "", social: "", score: 0 });
+  const [p1, setP1] = useState(initialPlayer);
+  const [p2, setP2] = useState(initialPlayer);
   const [round, setRound] = useState("");
 
   const handleSwap = () => {
@@ -18,8 +20,8 @@ const App = () => {
   };
 
   const handleReset = () => {
-    setP1({ ...p1, score: 0 });
-    setP2({ ...p2, score: 0 });
+    setP1(initialPlayer);
+    setP2(initialPlayer);
   };
 
   const handleSave = () => {
