@@ -1,4 +1,4 @@
-import rounds from "../data/rounds.json"
+import rounds from "../data/rounds.json";
 
 const ControlPanel = props => {
   const {
@@ -9,7 +9,7 @@ const ControlPanel = props => {
     handleReset,
     isLoading,
     status,
-  } = props
+  } = props;
   return (
     <>
       <select value={round} onChange={e => setRound(e.target.value)}>
@@ -20,14 +20,18 @@ const ControlPanel = props => {
         ))}
       </select>
       <div className="control-panel">
-        <button onClick={handleSwap}>Swap</button>
-        <button onClick={handleSave} disabled={isLoading}>
+        <button tabIndex={-1} onClick={handleSwap}>
+          Swap
+        </button>
+        <button tabIndex={-1} onClick={handleSave} disabled={isLoading}>
           {status}
         </button>
-        <button onClick={handleReset}>Reset</button>
+        <button tabIndex={-1} onClick={handleReset}>
+          Reset
+        </button>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ControlPanel
+export default ControlPanel;

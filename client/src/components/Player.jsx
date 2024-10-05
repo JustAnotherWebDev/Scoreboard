@@ -2,7 +2,7 @@ import plusIcon from "../assets/plus.svg";
 import minusIcon from "../assets/minus.svg";
 
 const Player = props => {
-  const { player, setPlayer } = props;
+  const { player, setPlayer, autofocus } = props;
   return (
     <>
       <input
@@ -14,15 +14,18 @@ const Player = props => {
             name: e.target.value,
           })
         }
+        autoFocus={autofocus}
       />
       <div className="control-panel">
         <button
+          tabIndex={-1}
           onClick={() => setPlayer({ ...player, score: player.score - 1 })}
         >
           <img src={minusIcon} />
         </button>
         <label>{player.score}</label>
         <button
+          tabIndex={-1}
           onClick={() => setPlayer({ ...player, score: player.score + 1 })}
         >
           <img src={plusIcon} />

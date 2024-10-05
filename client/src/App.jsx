@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react"
-import ControlPanel from "./components/ControlPanel"
-import Player from "./components/Player"
-import axios from "axios"
-import "./index.css"
+import { useState, useEffect } from "react";
+import ControlPanel from "./components/ControlPanel";
+import Player from "./components/Player";
+import axios from "axios";
+import "./index.css";
 
 const App = () => {
-  const [isLoading, setLoading] = useState(false)
-  const [status, setStatus] = useState("SAVE")
-  const [p1, setP1] = useState({ name: "", social: "", score: 0 })
-  const [p2, setP2] = useState({ name: "", social: "", score: 0 })
-  const [round, setRound] = useState("")
+  const [isLoading, setLoading] = useState(false);
+  const [status, setStatus] = useState("SAVE");
+  const [p1, setP1] = useState({ name: "", social: "", score: 0 });
+  const [p2, setP2] = useState({ name: "", social: "", score: 0 });
+  const [round, setRound] = useState("");
 
   const handleSwap = () => {
-    const temp = p1
-    setP1(p2)
-    setP2(temp)
-  }
+    const temp = p1;
+    setP1(p2);
+    setP2(temp);
+  };
 
   const handleReset = () => {
-    setP1({ ...p1, score: 0 })
-    setP2({ ...p2, score: 0 })
-  }
+    setP1({ ...p1, score: 0 });
+    setP2({ ...p2, score: 0 });
+  };
 
   const handleSave = () => {
-    setLoading(true)
-    setStatus("...")
+    setLoading(true);
+    setStatus("...");
     axios
       .put(`${import.meta.env.VITE_BACKEND_URL}scoreboard`, {
         player1: p1.name,
@@ -36,30 +36,30 @@ const App = () => {
         round: round,
       })
       .then(res => {
-        setLoading(false)
-        setStatus("SAVE")
+        setLoading(false);
+        setStatus("SAVE");
       })
       .catch(err => {
-        setStatus(err.code)
-      })
-  }
+        setStatus(err.code);
+      });
+  };
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}scoreboard`)
       .then(res => {
-        const data = res.data
-        setP1({ name: data.player1, social: data.social1, score: data.score1 })
-        setP2({ name: data.player2, social: data.social2, score: data.score2 })
-        setRound(data.round)
+        const data = res.data;
+        setP1({ name: data.player1, social: data.social1, score: data.score1 });
+        setP2({ name: data.player2, social: data.social2, score: data.score2 });
+        setRound(data.round);
       })
-      .catch(err => console.log(err.message))
-  }, [])
+      .catch(err => console.log(err.message));
+  }, []);
 
   return (
     <>
-      <Player player={p1} setPlayer={setP1} />
-      <Player player={p2} setPlayer={setP2} />
+      <Player player={p1} setPlayer={setP1} autofocus={true} />
+      <Player player={p2} setPlayer={setP2} autofocus={false} />
       <ControlPanel
         round={round}
         setRound={setRound}
@@ -70,7 +70,7 @@ const App = () => {
         status={status}
       />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
